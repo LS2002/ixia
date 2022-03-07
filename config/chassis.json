@@ -1,0 +1,17 @@
+{
+  "name": "10.0.0.1",
+  "network": [
+    {
+      "portName": "1.1.1",
+      "communityList": 0
+    },
+    {
+      "portName": "1.1.2",
+      "communityList": 1
+    },
+    {
+      "portName": "1.1.3",
+      "communityList": 2
+    }
+  ]
+}

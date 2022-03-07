@@ -1,0 +1,118 @@
+{
+  "clusterA": [
+    {
+      "scenario": {
+        "communityList": 0,
+        "enable": 1,
+        "network": {
+          "name": "IP-R1",
+          "ipAddress": "10.0.10.1",
+          "gatewayAddress": "10.0.10.254",
+          "count": 7,
+          "ipType": "IPv4",
+          "cidr": 24,
+          "incrementBy": "0.0.0.1",
+          "gatewayIncrement": "0.0.0.0"
+        }
+      },
+      "dut": {
+        "name": "DUT_clusterA_1",
+        "type": "VirtualDut",
+        "firstIp": "100.0.10.11/22",
+        "ipCount": 1000,
+        "subnetCount": 18,
+        "ipIncrStep": 1,
+        "vlanIncrStep": 1
+      },
+      "activityList": {
+        "name": "HTTP_GET_clusterA_1",
+        "protocolAndType": "HTTP Client",
+        "activeRole": "Client",
+        "enable": true,
+        "userObjectiveType": "connectionRate",
+        "userObjectiveValue": 18000,
+        "actionList": {
+          "destination": "DUT_clusterA_1",
+          "commandType": "GET",
+          "pageObject": "/"
+        }
+      }
+    },
+    {
+      "scenario": {
+        "communityList": 0,
+        "enable": 1,
+        "network": {
+          "name": "IP-R2",
+          "ipAddress": "10.0.11.8",
+          "gatewayAddress": "10.0.11.254",
+          "count": 7,
+          "ipType": "IPv4",
+          "cidr": 24,
+          "incrementBy": "0.0.0.1",
+          "gatewayIncrement": "0.0.0.0"
+        }
+      },
+      "dut": {
+        "name": "DUT_clusterA_2",
+        "type": "VirtualDut",
+        "firstIp": "100.0.18.11/22",
+        "ipCount": 1000,
+        "subnetCount": 17,
+        "ipIncrStep": 1,
+        "vlanIncrStep": 1
+      },
+      "activityList": {
+        "name": "HTTP_GET_clusterA_2",
+        "protocolAndType": "HTTP Client",
+        "activeRole": "Client",
+        "enable": true,
+        "userObjectiveType": "connectionRate",
+        "userObjectiveValue": 17000,
+        "actionList": {
+          "destination": "DUT_clusterA_2",
+          "commandType": "GET",
+          "pageObject": "/"
+        }
+      }
+    },
+    {
+      "scenario": {
+        "communityList": 0,
+        "enable": 1,
+        "network": {
+          "name": "IP-R3",
+          "ipAddress": "1001:100:10d:1001::1:102",
+          "gatewayAddress": "1001:100:10d:1001::1:101",
+          "count": 3,
+          "ipType": "IPv6",
+          "cidr": 122,
+          "incrementBy": "::1",
+          "gatewayIncrement": "::0"
+        }
+      },
+      "dut": {
+        "name": "DUT_clusterA_IPv6",
+        "type": "VirtualDut",
+        "firstIp": "0001:0001:0001:001::b/64",
+        "ipCount": 1000,
+        "subnetCount": 35,
+        "ipIncrStep": 1,
+        "vlanIncrStep": 1
+      },
+      "activityList": {
+        "name": "HTTP_GET_clusterA_IPv6",
+        "protocolAndType": "HTTP Client",
+        "activeRole": "Client",
+        "enable": true,
+        "userObjectiveType": "connectionRate",
+        "userObjectiveValue": 10000,
+        "actionList": {
+          "destination": "DUT_clusterA_IPv6:80",
+          "commandType": "GET",
+          "pageObject": "/"
+        }
+      }
+    }
+  ]
+}
